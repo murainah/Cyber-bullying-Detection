@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.container{
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.container .title ::before{
+    content: '';
+    position:absolute;
+    left: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+nav{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    color: #71b7e6;
+}
+h1{
+    position: absolute;
+    top: 0;
+    left: ;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 20px 10px;
+    text-align: center;
+}
+.header {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 20px 10px;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+<h1 class="header">SAY NO TO CYBERBULLYING</h1>
+    <div class="container">
+        <div class="title">DETECTING CYBERBULLYING</div>
+        <form method="POST" action="{{ url_for('predict')}}" >
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">enter text</span>
+                    <textarea name="rawtext" placeholder=" enter text" rows="10" cols="80"> </textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+
+        </form>
+    </div>
+
+{{prediction_text}}
+</body>
+</html>
